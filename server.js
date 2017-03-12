@@ -33,7 +33,7 @@ app.post('/kill', function (req, res) {
     if (req.headers['key'] == providedKey) {
         console.log("Emergency Kill Received.")
         process.exit();
-        res.send('SERVER KILLED');
+        res.send('{"server": "killed"}');
     } else {
         console.log("Unauthorized Attempt Received.")
     }
