@@ -32,8 +32,8 @@ app.post('/augustlock', function (req, res) {
 app.post('/kill', function (req, res) {
     if (req.headers['key'] == providedKey) {
         console.log("Emergency Kill Received.")
-        process.exit();
         res.send('{"server": "killed"}');
+        process.exit();
     } else {
         console.log("Unauthorized Attempt Received.")
     }
