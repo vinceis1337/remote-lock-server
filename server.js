@@ -21,7 +21,7 @@ app.post('/augustlock', function (req, res) {
         urlRequestString += req.body.command;
         console.log("Command: " + urlRequestString)
         request(urlRequestString, function (error, response, body) {
-            res.send(response.body);
+            res.send(body);
         })
     } else {
         console.log("Unauthorized Attempt Received.")
