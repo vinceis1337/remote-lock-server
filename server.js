@@ -43,6 +43,14 @@ app.post('/kill', function (req, res) {
     }
 });
 
+app.post('/status', function (req, res) {
+    if (req.headers['key'] == providedKey) {
+        res.sendStatus(200);
+    } else {
+        console.log("Unauthorized Attempt Received.");
+    }
+});
+
 //Instantiate the Server
 app.use(express.static(__dirname));
 var server = app.listen(port, function () {
